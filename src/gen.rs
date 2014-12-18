@@ -942,22 +942,6 @@ fn mk_fnty(ctx: &mut GenCtx, decl: &ast::FnDecl, abi: abi::Abi) -> ast::Ty {
     let mut segs = Vec::new();
     segs.push_all(&[
         ast::PathSegment {
-            identifier: ctx.ext_cx.ident_of("std"),
-            parameters: ast::AngleBracketedParameters(ast::AngleBracketedParameterData {
-                lifetimes: Vec::new(),
-                types: OwnedSlice::empty(),
-                bindings: OwnedSlice::empty(),
-            }),
-        },
-        ast::PathSegment {
-            identifier: ctx.ext_cx.ident_of("option"),
-            parameters: ast::AngleBracketedParameters(ast::AngleBracketedParameterData {
-                lifetimes: Vec::new(),
-                types: OwnedSlice::empty(),
-                bindings: OwnedSlice::empty(),
-            }),
-        },
-        ast::PathSegment {
             identifier: ctx.ext_cx.ident_of("Option"),
             parameters: ast::AngleBracketedParameters(ast::AngleBracketedParameterData {
                 lifetimes: Vec::new(),
@@ -978,7 +962,7 @@ fn mk_fnty(ctx: &mut GenCtx, decl: &ast::FnDecl, abi: abi::Abi) -> ast::Ty {
         node: ast::TyPath(
             ast::Path {
                 span: ctx.span,
-                global: true,
+                global: false,
                 segments: segs
             },
             ast::DUMMY_NODE_ID
