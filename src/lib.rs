@@ -50,6 +50,7 @@ use types::Global;
 
 
 #[link(name="stdc++")]
+#[link(name="ffi")]
 #[link(name="LLVMInstrumentation", kind="static")]
 #[link(name="LLVMIRReader", kind="static")]
 #[link(name="LLVMAsmParser", kind="static")]
