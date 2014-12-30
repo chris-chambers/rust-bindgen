@@ -4,7 +4,6 @@
 
 extern crate syntax;
 extern crate rustc;
-extern crate rustc_llvm;
 extern crate libc;
 #[phase(plugin, link)] extern crate log;
 
@@ -92,7 +91,7 @@ use types::Global;
 //#[link(name="LLVMMC", kind="static")]
 //#[link(name="LLVMObject", kind="static")]
 //#[link(name="LLVMCore", kind="static")]
-//#[link(name="LLVMSupport", kind="static")]
+#[link(name="LLVMSupport", kind="static")]
 extern { }
 
 #[allow(dead_code)]
