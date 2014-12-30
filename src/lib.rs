@@ -20,8 +20,54 @@ use rustc::plugin::Registry;
 
 use types::Global;
 
+#[link(name="ncurses")]
+#[link(name="z")]
+
+#[link(name="clang", kind="static")]
+#[link(name="clangARCMigrate", kind="static")]
+#[link(name="clangAST", kind="static")]
+#[link(name="clangASTMatchers", kind="static")]
+#[link(name="clangAnalysis", kind="static")]
+#[link(name="clangBasic", kind="static")]
+#[link(name="clangCodeGen", kind="static")]
+#[link(name="clangDriver", kind="static")]
+#[link(name="clangDynamicASTMatchers", kind="static")]
+#[link(name="clangEdit", kind="static")]
+#[link(name="clangFormat", kind="static")]
+#[link(name="clangFrontend", kind="static")]
+#[link(name="clangFrontendTool", kind="static")]
+#[link(name="clangIndex", kind="static")]
+#[link(name="clangLex", kind="static")]
+#[link(name="clangParse", kind="static")]
+#[link(name="clangRewrite", kind="static")]
+#[link(name="clangRewriteFrontend", kind="static")]
+#[link(name="clangSema", kind="static")]
+#[link(name="clangSerialization", kind="static")]
+#[link(name="clangStaticAnalyzerCheckers", kind="static")]
+#[link(name="clangStaticAnalyzerCore", kind="static")]
+#[link(name="clangStaticAnalyzerFrontend", kind="static")]
+#[link(name="clangTooling", kind="static")]
+
+
+#[link(name="LLVMProfileData", kind="static")]
+#[link(name="LLVMOption", kind="static")]
+#[link(name="LLVMObjCARCOpts", kind="static")]
+#[link(name="LLVMTransformUtils", kind="static")]
+#[link(name="LLVMipa", kind="static")]
+#[link(name="LLVMAnalysis", kind="static")]
+#[link(name="LLVMTarget", kind="static")]
+#[link(name="LLVMMC", kind="static")]
+#[link(name="LLVMIRReader", kind="static")]
+#[link(name="LLVMBitReader", kind="static")]
+#[link(name="LLVMAsmParser", kind="static")]
+#[link(name="LLVMCore", kind="static")]
+#[link(name="LLVMSupport", kind="static")]
+extern { }
+
+#[allow(dead_code)]
 mod types;
 mod clangll;
+#[allow(dead_code)]
 mod clang;
 mod gen;
 mod parser;
@@ -59,6 +105,7 @@ impl Default for BindgenOptions {
     }
 }
 
+#[deriving(Copy)]
 pub enum LinkType {
     Default,
     Static,

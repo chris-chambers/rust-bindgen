@@ -28,9 +28,8 @@ fn main() {
         false
     };
 
-    if is_static_build {
-        panic!("supposed to be static!");
-    } else {
-        println!("cargo:rustc-flags=-l clang -L {}", clang_dir.as_str().unwrap());
+    println!("cargo:rustc-flags=-L {}", clang_dir.as_str().unwrap());
+    if !is_static_build {
+        println!("cargo:rustc-flags=-l clang");
     }
 }
