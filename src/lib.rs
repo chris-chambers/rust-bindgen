@@ -90,7 +90,7 @@ use types::Global;
 //#[link(name="LLVMTarget", kind="static")]
 //#[link(name="LLVMMC", kind="static")]
 //#[link(name="LLVMObject", kind="static")]
-//#[link(name="LLVMCore", kind="static")]
+#[link(name="LLVMCore", kind="static")]
 #[link(name="LLVMSupport", kind="static")]
 extern { }
 
