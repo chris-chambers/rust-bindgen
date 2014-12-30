@@ -3,7 +3,7 @@
 #![feature(globs, quote, phase, plugin_registrar)]
 
 extern crate syntax;
-extern crate rustc;
+//extern crate rustc;
 extern crate libc;
 #[phase(plugin, link)] extern crate log;
 
@@ -16,7 +16,7 @@ use syntax::codemap::{DUMMY_SP, Span};
 use syntax::print::{pp, pprust};
 use syntax::print::pp::eof;
 use syntax::ptr::P;
-use rustc::plugin::Registry;
+//use rustc::plugin::Registry;
 
 use types::Global;
 
@@ -158,11 +158,11 @@ mod gen;
 mod parser;
 mod macro;
 
-#[doc(hidden)]
-#[plugin_registrar]
-pub fn plugin_registrar(reg: &mut Registry) {
-    reg.register_macro("bindgen", macro::bindgen_macro);
-}
+//#[doc(hidden)]
+//#[plugin_registrar]
+//pub fn plugin_registrar(reg: &mut Registry) {
+//    reg.register_macro("bindgen", macro::bindgen_macro);
+//}
 
 pub struct BindgenOptions {
     pub match_pat: Vec<String>,
