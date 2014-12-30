@@ -63,6 +63,7 @@ use types::Global;
 #[link(name="LLVMObject", kind="static")]
 #[link(name="LLVMCore", kind="static")]
 #[link(name="LLVMSupport", kind="static")]
+#[link(name="stdc++")]
 extern { }
 
 #[allow(dead_code)]
