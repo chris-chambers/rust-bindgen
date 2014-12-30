@@ -3,7 +3,7 @@
 #![feature(globs, quote, phase, plugin_registrar)]
 
 extern crate syntax;
-//extern crate rustc;
+extern crate rustc;
 extern crate libc;
 #[phase(plugin, link)] extern crate log;
 
@@ -16,7 +16,7 @@ use syntax::codemap::{DUMMY_SP, Span};
 use syntax::print::{pp, pprust};
 use syntax::print::pp::eof;
 use syntax::ptr::P;
-//use rustc::plugin::Registry;
+use rustc::plugin::Registry;
 
 use types::Global;
 
@@ -55,7 +55,6 @@ use types::Global;
 #[link(name="LLVMIRReader", kind="static")]
 #[link(name="LLVMAsmParser", kind="static")]
 #[link(name="LLVMDebugInfo", kind="static")]
-#[link(name="LLVMOption", kind="static")]
 #[link(name="LLVMLTO", kind="static")]
 #[link(name="LLVMLinker", kind="static")]
 #[link(name="LLVMipo", kind="static")]
@@ -145,8 +144,6 @@ use types::Global;
 #[link(name="LLVMTarget", kind="static")]
 #[link(name="LLVMMC", kind="static")]
 #[link(name="LLVMObject", kind="static")]
-#[link(name="LLVMCore", kind="static")]
-#[link(name="LLVMSupport", kind="static")]
 extern { }
 
 #[allow(dead_code)]
@@ -158,11 +155,11 @@ mod gen;
 mod parser;
 mod macro;
 
-//#[doc(hidden)]
-//#[plugin_registrar]
-//pub fn plugin_registrar(reg: &mut Registry) {
-//    reg.register_macro("bindgen", macro::bindgen_macro);
-//}
+#[doc(hidden)]
+#[plugin_registrar]
+pub fn plugin_registrar(reg: &mut Registry) {
+    reg.register_macro("bindgen", macro::bindgen_macro);
+}
 
 pub struct BindgenOptions {
     pub match_pat: Vec<String>,
