@@ -4,6 +4,7 @@
 
 extern crate syntax;
 extern crate rustc;
+extern crate rustc_llvm;
 extern crate libc;
 #[phase(plugin, link)] extern crate log;
 
