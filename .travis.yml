@@ -1,10 +1,12 @@
 language: rust
 
+os:
+  - osx
 before_install:
-  - yes | sudo add-apt-repository "deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.5 main"
-  - yes | sudo add-apt-repository "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu precise main"
-  - sudo apt-get update
+    #  - yes | sudo add-apt-repository "deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.5 main"
+    #  - yes | sudo add-apt-repository "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu precise main"
+    #  - sudo apt-get update
 install:
-  - sudo apt-get install --force-yes libclang-3.5-dev llvm-3.5-dev
+    #  - sudo apt-get install --force-yes libclang-3.5-dev llvm-3.5-dev
 script:
-  - BINDGEN_STATIC=1 LIBCLANG_PATH=/usr/lib/llvm-3.5/lib LD_PRELOAD=/usr/lib/llvm-3.5/lib/libclang.so cargo test --verbose --jobs 1
+  - BINDGEN_STATIC=1 LIBCLANG_PATH=/usr/lib/llvm-3.5/lib cargo test --verbose --jobs 1
