@@ -21,5 +21,16 @@ fn main() {
 		panic!("Unable to find {}", clang_lib);
 	}
 
-	println!("cargo:rustc-flags=-l clang -L {}", clang_dir.as_str().unwrap());
+
+    let is_static_build = if let Some(s) = os::getenv("BINDGEN_STATIC") {
+        s == "1"
+    } else {
+        false
+    };
+
+    if is_static_build {
+        panic!("supposed to be static!");
+    } else {
+        println!("cargo:rustc-flags=-l clang -L {}", clang_dir.as_str().unwrap());
+    }
 }
