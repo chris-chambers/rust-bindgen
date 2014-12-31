@@ -1,4 +1,4 @@
-#![feature(phase)]
+/*#![feature(phase)]
 
 #[phase(plugin)]
 extern crate bindgen_macro;
@@ -9,4 +9,4 @@ extern crate libc;
 fn test_struct_containing_forward_declared_struct() {
     mod ffi { bindgen!("headers/struct_containing_forward_declared_struct.h"); }
     // Check that struct b is not duplicated
-}
+}*/

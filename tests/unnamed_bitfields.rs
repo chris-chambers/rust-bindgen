@@ -1,4 +1,4 @@
-#![feature(phase)]
+/*#![feature(phase)]
 
 #[phase(plugin)]
 extern crate bindgen_macro;
@@ -9,4 +9,4 @@ extern crate libc;
 fn test_unnamed_bitfields() {
     mod ffi { bindgen!("headers/unnamed_bitfields.h"); }
     // Check that there are no unnamed struct fields
-}
+}*/

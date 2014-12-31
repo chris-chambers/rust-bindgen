@@ -1,4 +1,4 @@
-#![feature(phase)]
+/*#![feature(phase)]
 
 #[phase(plugin)]
 extern crate bindgen_macro;
@@ -81,4 +81,4 @@ fn test_union_with_nesting() {
         assert_eq!(*x.c1(), 0x1234);
         assert_eq!(*x.c2(), 0x1234);
     }
-}
+}*/

@@ -1,4 +1,4 @@
-#![feature(phase)]
+/*#![feature(phase)]
 
 #[phase(plugin)]
 extern crate bindgen_macro;
@@ -20,4 +20,4 @@ fn test_floor_is_bound_and_callable() {
         assert_eq!(ffi::floor(-2.7), -3.0);
         assert_eq!(ffi::floor(-0.0),  0.0);
     }
-}
+}*/
