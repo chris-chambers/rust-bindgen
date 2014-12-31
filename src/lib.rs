@@ -1,4 +1,4 @@
-#![crate_name = "bindgen"]
+//#![crate_name = "bindgen"]
 //#![crate_type = "dylib"]
 #![feature(globs, quote, phase)]
 
