@@ -1,5 +1,5 @@
 #![crate_name = "bindgen"]
-#![crate_type = "dylib"]
+//#![crate_type = "dylib"]
 #![feature(globs, quote, phase, plugin_registrar)]
 
 extern crate syntax;
