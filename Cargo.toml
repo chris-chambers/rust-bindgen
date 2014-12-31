@@ -17,3 +17,10 @@ plugin = true
 
 name = "bindgen"
 doc = false
+
+
+[dependencies.rust-bindgen-macro]
+git = "https://github.com/chris-chambers/rust-bindgen-macro.git"
+
+    [dependencies.rust-bindgen]
+    path = "."

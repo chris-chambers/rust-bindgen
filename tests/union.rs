@@ -1,7 +1,7 @@
 #![feature(phase)]
 
 #[phase(plugin)]
-extern crate bindgen;
+extern crate bindgen_macro;
 
 extern crate libc;
 
